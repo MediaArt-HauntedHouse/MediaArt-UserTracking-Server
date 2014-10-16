@@ -1,6 +1,8 @@
 html
   head
     title UserTracking
+    meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false
     = javascript_include_tag "application", "data-turbolinks-track" => false
     = csrf_meta_tags
@@ -55,4 +57,4 @@ html
 
     .container
       hr
-      p &copy; UserTracking
+      p.text-center &copy; UserTracking

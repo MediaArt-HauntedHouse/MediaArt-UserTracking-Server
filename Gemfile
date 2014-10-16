@@ -45,4 +45,5 @@ gem 'slim'
 
 gem 'websocket-rails'
 gem "twitter-bootstrap-rails"
+gem 'font-awesome-rails'
 

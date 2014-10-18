@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017002715) do
+ActiveRecord::Schema.define(version: 20141018053914) do
 
   create_table "beacons", force: true do |t|
     t.datetime "created_at"

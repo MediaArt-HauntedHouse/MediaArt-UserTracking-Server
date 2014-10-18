@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :beacons
+
   root 'map#index'
   get 'map' => 'map#index'
   resources :beacons, only: [:index, :new, :create, :destroy]

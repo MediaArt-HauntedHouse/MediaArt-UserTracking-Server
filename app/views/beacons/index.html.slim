@@ -1,0 +1,19 @@
+h1 Listing beacons
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @beacons.each do |beacon|
+      tr
+        td = link_to 'Show', beacon
+        td = link_to 'Edit', edit_beacon_path(beacon)
+        td = link_to 'Destroy', beacon, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Beacon', new_beacon_path

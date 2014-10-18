@@ -1,6 +1,30 @@
 p#notice = notice
+h1
+  |Beacon#
+  = @beacon.id
 
+table.table
+  tbody
+    tr
+      th id
+      td = @beacon.id
+    tr
+      th uuid
+      td = @beacon.uuid
+    tr
+      th major
+      td = @beacon.major
+    tr
+      th minor
+      td = @beacon.minor
+    tr
+      th latitude
+      td = @beacon.latitude
+    tr
+      th longitude
+      td = @beacon.longitude
 
-= link_to 'Edit', edit_beacon_path(@beacon)
-'|
-= link_to 'Back', beacons_path
+.col-xs-12
+  .row
+    = link_to 'Back', beacons_path, :class => 'btn btn-default'
+    = link_to 'Edit', edit_beacon_path(@beacon), :class => 'btn btn-default'

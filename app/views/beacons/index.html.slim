@@ -1,19 +1,24 @@
-h1 Listing beacons
+h1 Beacons
+= link_to 'New Beacon', new_beacon_path, :class => 'btn btn-default'
 
-table
+table.table
   thead
     tr
-      th
-      th
-      th
+      th.col-xs-1 id
+      th.col-xs-4 uuid
+      th.col-xs-1 major
+      th.col-xs-1 minor
+      th.col-xs-3
 
   tbody
     - @beacons.each do |beacon|
       tr
-        td = link_to 'Show', beacon
-        td = link_to 'Edit', edit_beacon_path(beacon)
-        td = link_to 'Destroy', beacon, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Beacon', new_beacon_path
+        td = beacon.id
+        td = beacon.uuid
+        td = beacon.major
+        td = beacon.minor
+        td.text-right
+          .btn-group
+            = link_to 'Show', beacon, :class => 'btn btn-default'
+            = link_to 'Edit', edit_beacon_path(beacon), :class => 'btn btn-default'
+            = link_to 'Destroy', beacon, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-default'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018053914) do
+ActiveRecord::Schema.define(version: 20141018120708) do
 
   create_table "beacons", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20141018053914) do
     t.string   "uuid",       limit: 36
     t.integer  "major"
     t.integer  "minor"
+    t.decimal  "latitude",              precision: 10, scale: 7, null: false
+    t.decimal  "longitude",             precision: 10, scale: 7, null: false
   end
 
 end

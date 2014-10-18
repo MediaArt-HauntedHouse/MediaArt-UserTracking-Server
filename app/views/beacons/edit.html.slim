@@ -2,7 +2,7 @@ h1 Editing beacon
 
 == render 'form'
 
-= link_to 'Show', @beacon
-'|
-= link_to 'Back', beacons_path
-
+.col-xs-12
+  .row
+    = link_to 'Back', beacons_path, :class => 'btn btn-default'
+    = link_to 'Edit', edit_beacon_path(@beacon), :class => 'btn btn-default'

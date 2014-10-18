@@ -6,4 +6,25 @@
         - @beacon.errors.full_messages.each do |message|
           li = message
 
-  .actions = f.submit 'Save'
+  ul.list-unstyled
+    li.form-group
+      = f.label :uuid
+      = f.text_field :uuid, size: 36, :class => 'form-control'
+
+    li.form-group
+      = f.label :major
+      = f.text_field :major, :class => 'form-control'
+
+    li.form-group
+      = f.label :minor
+      = f.text_field :minor, :class => 'form-control'
+
+    li.form-group
+      = f.label :latitude
+      = f.text_field :latitude, :class => 'form-control'
+
+    li.form-group
+      = f.label :longitude
+      = f.text_field :longitude, :class => 'form-control'
+
+  .actions = f.submit 'Save', :class => 'btn btn-success'

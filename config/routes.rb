@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'map#index'
   get 'map' => 'map#index'
+  post 'map' => 'map#create'
   resources :beacons, only: [:index, :new, :create, :destroy]
   # get 'beacons' => 'beacons#index'
   # get 'beacons/new' => 'beacons#new'

@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  dispatcher = new WebSocketRails(window.location.host + '/websocket')
+  dispatcher = new WebSocketRails window.location.host + '/websocket'
 
   success = (response) ->
     console.info response.message
@@ -13,3 +13,7 @@ $ ->
 
   dispatcher.on_open = ->
     console.info 'Connection Start'
+
+  channel = dispatcher.subscribe 'streaming'
+  channel.bind 'create', (beacon) ->
+    console.log beacon

@@ -1,0 +1,177 @@
+.ghost-container
+  background: #000000
+
+=ghost_show_core
+  stroke-dashoffset: 0
+  fill: #ececec
+
+=ghost_show_text
+  stroke-dashoffset: 0
+  fill: #acacac
+
+.ghost
+  & > *
+    opacity: 0
+  opacity: 0
+  display: block
+  margin: 200px auto
+  width: 300px
+  height: 300px
+  -webkit-animation: all 3s ease-in .5s forwards
+
+.ghost-core
+  stroke: #ffffff
+  fill: none
+  stroke-width: 1
+  stroke-dasharray: 3000
+  stroke-dashoffset: 3000
+  -webkit-animation: all 3s linear .5s forwards
+
+.ghost-text
+  stroke: #acacac
+  fill: none
+  stroke-width: 1
+  stroke-dasharray: 3000
+  stroke-dashoffset: 3000
+  -webkit-animation: all 3s linear .5s forwards
+
+
+
+// Before
+.ghost.before
+  border-radius: 50%
+  display: block
+  opacity: 1
+  -webkit-animation: ghost_before .9s linear
+  -webkit-animation-iteration-count: infinite
+  border: 24px #000000 dashed
+
+@-webkit-keyframes ghost_before
+  0%
+    background: #343434
+    border-color: #f90
+    -webkit-transform: rotate(0deg)
+  100%
+    background: #ff0000
+    border-color: #343434
+    -webkit-transform: rotate(360deg)
+
+
+// Push
+.ghost.push
+  & > *
+    opacity: 1
+  opacity: 1
+  display: block
+  -webkit-animation: ghost_push .3s ease-out
+
+@-webkit-keyframes ghost_push
+  0%
+    -webkit-transform: scale(0)
+  60%
+    -webkit-transform: scale(1.2)
+  100%
+    -webkit-transform: scale(1)
+
+
+// Path
+.ghost.path
+  & > *
+    opacity: 1
+  opacity: 1
+  display: block
+  .ghost-core
+    -webkit-animation: ghost_core 6s ease-in forwards
+  .ghost-text
+    -webkit-animation: ghost_text 3s ease-in forwards
+
+@-webkit-keyframes ghost_core
+  0%
+    stroke-dashoffset: 3000
+  60%
+    stroke-dashoffset: 0
+    fill: #acacac
+  100%
+    fill: #ececec
+
+@-webkit-keyframes ghost_text
+  0%
+    stroke-dashoffset: 3000
+  60%
+    stroke-dashoffset: 0
+    fill: #000000
+  100%
+    fill: #acacac
+
+
+// Spin
+.ghost.spin
+  & > *
+    opacity: 1
+  opacity: 1
+  .ghost-core
+    +ghost_show_core
+  .ghost-text
+    +ghost_show_text
+  display: block
+  .ghost-core
+    transform-origin: center center
+    -webkit-animation: ghost_spin .6s linear
+    -webkit-animation-iteration-count: infinite
+
+@-webkit-keyframes ghost_spin
+  0%
+    -webkit-transform: rotate(0deg)
+  25%
+    -webkit-transform: rotate(-16deg)
+  50%
+    -webkit-transform: rotate(0deg)
+  75%
+    -webkit-transform: rotate(16deg)
+  100%
+    -webkit-transform: rotate(0deg)
+
+
+// Pop
+// .ghost.pop
+//   & > *
+//     opacity: 1
+//   opacity: 1
+//   .ghost-core
+//     +ghost_show_core
+//   .ghost-text
+//     +ghost_show_text
+//   display: block
+//   transform-origin: center center
+//   -webkit-animation: ghost_pop 1s linear
+
+// @-webkit-keyframes ghost_pop
+
+// After
+.ghost.after
+  & > *
+    opacity: 1
+  .ghost-core
+    +ghost_show_core
+  .ghost-text
+    +ghost_show_text
+  opacity: 1
+  display: block
+  transform-origin: center center
+  -webkit-animation: ghost_after 1s ease-in .5s forwards
+
+@-webkit-keyframes ghost_after
+  0%
+    -webkit-transform: scale(1)
+    -webkit-transform: rotate(0deg)
+  30%
+    -webkit-transform: scale(0.8)
+    -webkit-transform: rotate(16deg)
+  40%
+    opacity: 1
+  95%
+    -webkit-transform: scale(100)
+  100%
+    -webkit-transform: scale(100)
+    -webkit-transform: rotate(-16deg)
+    opacity: 0

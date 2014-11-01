@@ -25,38 +25,13 @@ html
                 .fa.fa-map-marker.fa-fw
                 |Map
             li
+              a(href="/map/status")
+                .fa.fa-search.fa-fw
+                |MapStatus
+            li
               a(href="/beacons")
                 .fa.fa-wifi.fa-fw
                 |Beacons
-
-        /     li.dropdown
-        /       a.dropdown-toggle(href="#" data-toggle="dropdown")
-        /         |Graph
-        /         span.caret
-        /       ul.dropdown-menu(role="menu")
-        /         li
-        /           a(href="/ingredients/with_frequency") Ingredients/with_frequency
-        /         li.divider
-        /         li
-        /           a(href="/recipes/with_frequency") Recipes/with_frequency
-        /         li.divider
-        /         li
-        /           a(href="/reports/users_relation") Reports/users_relation
-
-        /     li.dropdown
-        /       a.dropdown-toggle(href="#" data-toggle="dropdown")
-        /         |List
-        /         span.caret
-        /       ul.dropdown-menu(role="menu")
-        /         li
-        /           a(href="/list/recipe") Recipe
-        /         li.divider
-        /         li
-        /           a(href="/list/ingredient") Ingredient
-        /         li
-        /           a(href="/list/step") Step
-        /         li
-        /           a(href="/list/report") Report
 
     .container
       = yield

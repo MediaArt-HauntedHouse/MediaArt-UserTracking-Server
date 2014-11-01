@@ -83,7 +83,7 @@
         points.push Math.abs(Math.round((val.proximity * 100)))
 
       status = Number(avelage(points))
-      if status < 13
+      if status < 110
         console.log 'inside'
         ghost_show()
   channel.bind 'create_old', (beacon) ->

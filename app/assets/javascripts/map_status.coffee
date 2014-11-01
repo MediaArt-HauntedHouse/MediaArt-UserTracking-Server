@@ -26,6 +26,7 @@
     for key, val of beacon
       points.push Math.abs(Math.round((val.proximity * 100)))
 
+    console.log Number(avelage(points))
     circle = document.createElementNS("http://www.w3.org/2000/svg", "circle")
     circle.setAttribute 'cx', 350 / 2
     circle.setAttribute 'cy', 350 / 2

@@ -5,17 +5,18 @@ table.table
   thead
     tr
       th.col-xs-1 id
-      th.col-xs-6 body
-      th.col-xs-2 created_at
+      th.col-xs-5 body
+      th.col-xs-3 created_at
       th.col-xs-3
 
   tbody
     - @pictures.each do |picture|
       tr
         td = picture.id
-        td = picture.body
+        td =image_tag(picture.body, :size => '64x64', :class => 'picture')
         td = picture.created_at
         td.text-right
           .btn-group
+            = link_to 'Download', picture.body, :class => 'btn btn-default'
             = link_to 'Show', picture, :class => 'btn btn-default'
             = link_to 'Destroy', picture, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-default'

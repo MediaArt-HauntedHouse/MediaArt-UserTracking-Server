@@ -3,9 +3,10 @@ h1
   |Picture#
   = @picture.id
 
-= @picture.id
-= @picture.body
+.col-xs-12.picture-container
+  =image_tag(@picture.body, :size => '512x512', :class => 'picture')
 
-.col-xs-12
-  .row
+.col-xs-12.picture-container
+  .btn-group
+    = link_to 'Download', @picture.body, :class => 'btn btn-default'
     = link_to 'Back', pictures_path, :class => 'btn btn-default'

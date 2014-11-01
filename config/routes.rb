@@ -8,10 +8,7 @@ Rails.application.routes.draw do
   post 'map' => 'map#create'
   resources :beacons, only: [:index, :new, :create, :destroy]
   resources :pictures, only: [:index, :new, :show, :create, :destroy]
-  # get 'beacons' => 'beacons#index'
-  # get 'beacons/new' => 'beacons#new'
-  # post 'beacons' => 'beacons#create'
-  # delete 'beacons/:id' => 'beacons#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

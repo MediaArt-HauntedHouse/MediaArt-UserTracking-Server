@@ -1,5 +1,5 @@
 h1 Pictures
-= link_to 'New Picture', new_picture_path, :class => 'btn btn-default'
+= link_to content_tag(:i, 'Add Picture', :class => 'fa fa-plus'), new_picture_path, :class => 'btn btn-default'
 
 table.table
   thead
@@ -7,7 +7,7 @@ table.table
       th.col-xs-1 id
       th.col-xs-5 body
       th.col-xs-3 created_at
-      th.col-xs-3
+      th.col-xs-3 DL/Show/Delete
 
   tbody
     - @pictures.each do |picture|
@@ -17,6 +17,6 @@ table.table
         td = picture.created_at
         td.text-right
           .btn-group
-            = link_to 'Download', picture.body, :class => 'btn btn-default'
-            = link_to 'Show', picture, :class => 'btn btn-default'
-            = link_to 'Destroy', picture, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-default'
+            = link_to content_tag(:i, '', :class => 'fa fa-download fa-fw'), picture.body, :class => 'btn btn-default'
+            = link_to content_tag(:i, '', :class => 'fa fa-search fa-fw'), picture, :class => 'btn btn-default'
+            = link_to content_tag(:i, '', :class => 'fa fa-trash fa-fw'), picture, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-default'

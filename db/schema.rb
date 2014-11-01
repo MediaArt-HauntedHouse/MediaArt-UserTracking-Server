@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018120708) do
+ActiveRecord::Schema.define(version: 20141101102709) do
 
   create_table "beacons", force: true do |t|
     t.datetime "created_at"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20141018120708) do
     t.integer  "minor"
     t.decimal  "latitude",              precision: 10, scale: 7, null: false
     t.decimal  "longitude",             precision: 10, scale: 7, null: false
+  end
+
+  create_table "pictures", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "body"
   end
 
 end

@@ -1,0 +1,11 @@
+p#notice = notice
+h1
+  |Picture#
+  = @picture.id
+
+= @picture.id
+= @picture.body
+
+.col-xs-12
+  .row
+    = link_to 'Back', pictures_path, :class => 'btn btn-default'

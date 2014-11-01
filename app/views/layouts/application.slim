@@ -1,6 +1,6 @@
 html
   head
-    title UserTracking
+    title MediaArt-HH
     meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false
@@ -16,7 +16,7 @@ html
             - 3.times.each do |i|
               span.icon-bar
 
-          a.navbar-brand(href="/") UserTracking
+          a.navbar-brand(href="/") MediaArt-HH
 
         .collapse.navbar-collapse#navbar-collapse
           ul.nav.navbar-nav.navbar-right
@@ -28,6 +28,12 @@ html
               a(href="/map/status")
                 .fa.fa-search.fa-fw
                 |MapStatus
+
+            li
+              a(href="/pictures")
+                .fa.fa-pencil.fa-fw
+                |Pictures
+
             li
               a(href="/beacons")
                 .fa.fa-wifi.fa-fw

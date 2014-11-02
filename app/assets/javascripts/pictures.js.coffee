@@ -3,6 +3,7 @@
     map = document.getElementsByClassName("container-view")[0]
     if map.webkitRequestFullscreen
       map.webkitRequestFullscreen()
+
   colors = [
     '#224687',
     '#2ABFD4',
@@ -17,7 +18,7 @@
       $(ele).css({
         backgroundColor: colors[Math.floor(Math.random() * colors.length)],
         transform: "scale(" + Math.random() + ")",
-        borderRadius: "10%",
+        borderRadius: "16%",
         opacity: 1
       })
       return 0

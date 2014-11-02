@@ -9,7 +9,7 @@ class PicturesController < ApplicationController
   end
 
   def view
-    @pictures = Picture.last(20)
+    @pictures = Picture.last(100)
   end
 
   def new

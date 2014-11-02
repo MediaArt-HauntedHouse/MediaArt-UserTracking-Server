@@ -2,7 +2,7 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :destroy]
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.order('created_at DESC')
   end
 
   def show
@@ -17,6 +17,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
+        WebsocketRails[:streaming].trigger "newpicture", @picture
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
       else
         format.html { render :new }

@@ -1,5 +1,10 @@
+.map4debug-container
+  margin: 64px auto
+
 .ghost-container
-  background: #000000
+  // background: #000000
+  border: 5px solid #35d6c9
+  transform: rotate3d(1,0,0,180deg)
 
 =ghost_show_core
   stroke-dashoffset: 0
@@ -169,11 +174,32 @@
     -webkit-transform: rotate(16deg)
   40%
     opacity: 1
+    -webkit-transform: translateY(0)
   70%
     opacity: 0
+    -webkit-transform: translateY(-768px)
   95%
-    -webkit-transform: scale(100)
     opacity: 0
   100%
-    -webkit-transform: scale(100)
     -webkit-transform: rotate(-16deg)
+
+
+// Allow
+.ghost.allow
+  opacity: 1
+  display: block
+  -webkit-animation: ghost_allow 1s ease-in .5s forwards
+  &:after
+    font-family: 'FontAwesome'
+    content: "\f054"
+    position: absolute
+    font-size: 40px
+    color: #acacac
+
+@-webkit-keyframes ghost_allow
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  50%
+    opacity: 0

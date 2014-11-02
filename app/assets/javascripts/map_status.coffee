@@ -67,3 +67,14 @@
     circle.setAttribute 'fill', '#343434'
     $('svg').append circle
     return 0
+
+
+  circle = document.createElementNS("http://www.w3.org/2000/svg", "circle")
+  circle.setAttribute 'cx', (350 / 2)
+  circle.setAttribute 'cy', (350 / 2)
+  circle.setAttribute 'r', '110'
+  circle.setAttribute 'fill', 'none'
+  circle.setAttribute 'stroke', '#23b750'
+  circle.setAttribute 'stroke-width', 8
+  $('svg').append circle
+return 0

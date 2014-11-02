@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'map' => 'map#index'
   get 'map/status' => 'map#status'
   post 'map' => 'map#create'
+  get 'view' => 'pictures#view'
   resources :beacons, only: [:index, :new, :create, :destroy]
   resources :pictures, only: [:index, :new, :show, :create, :destroy]
 

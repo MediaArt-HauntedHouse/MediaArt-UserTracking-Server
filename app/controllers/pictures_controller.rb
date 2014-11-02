@@ -8,6 +8,10 @@ class PicturesController < ApplicationController
   def show
   end
 
+  def view
+    @pictures = Picture.last(20)
+  end
+
   def new
     @picture = Picture.new
   end

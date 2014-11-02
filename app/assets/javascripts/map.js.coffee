@@ -84,5 +84,5 @@
         points.push Math.abs(Math.round((val.proximity * 100)))
 
       status = Number(avelage(points))
-      if status < 110
+      if status < 220
         ghost_show()
